@@ -18,27 +18,25 @@ export const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'space-around',
         flexDirection: "row",
         flexWrap: 'wrap'
     },
     thumb: {
         maxWidth:150,
-        width: 250,
-        height: 250,
+        height: 250
     },
     card: {
         width:150,
         alignItems: 'center',
         margin: 'auto',
-        marginBottom: 22,
+        marginBottom: 22 
     },
     name: {
         color: theme.colors.white,
         marginTop: 5,
-        fontSize: 15,
-        textAlign: 'center'
+        fontSize: 15
     },
     ano: {
         color: theme.colors.secundaryWhite,
