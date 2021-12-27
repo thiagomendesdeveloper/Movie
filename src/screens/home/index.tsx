@@ -1,7 +1,6 @@
 import { View, Text, Image, FlatList ,TouchableOpacity } from "react-native"
 import { styles } from './style'
 import React, { useState, useEffect } from 'react';
-import Detail from '../Main';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -55,7 +54,9 @@ export default function Home({navigation}: Props){
                 numColumns={2}
                 renderItem={({item}) => 
                 <View style={styles.content}>
-                    <TouchableOpacity activeOpacity={.7} key={item.id} onPress={ () => navigation.navigate('Detail')}>
+                    <TouchableOpacity activeOpacity={.7} key={item.id} onPress={ () => navigation.navigate('Details',{
+                        itemId: item.id,
+                    })}>
                         <View style={styles.card}>
                             <Image style={styles.thumb} resizeMode="cover" source={ {uri: base_img+item.poster_path } } />
                             <Text style={styles.name}>{item.title}</Text>
