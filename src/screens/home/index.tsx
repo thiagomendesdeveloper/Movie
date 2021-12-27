@@ -16,7 +16,8 @@ interface Movies {
     id: string,
     title?: string,
     poster_path?: string,
-    release_date?: string
+    release_date?: string,
+    overview?: string
 }
 
 type ProfileScreenNavigationProp = StackNavigationProp<
@@ -40,6 +41,7 @@ export default function Home({navigation}: Props){
         const fetchbase = async() => {
             const req = await fetch(`${api_base}/discover/movie?api_key=${api_key}&language=pt-br&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`)
             const json = await req.json()
+            console.log(json.results)
             setMovies( json.results )
         }
         fetchbase()
@@ -47,7 +49,7 @@ export default function Home({navigation}: Props){
     
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Filmes</Text>
+            <Text style={styles.title}> Filmes</Text>
             <FlatList
                 data={Movies}
                 keyExtractor={item => item.id}
@@ -56,6 +58,10 @@ export default function Home({navigation}: Props){
                 <View style={styles.content}>
                     <TouchableOpacity activeOpacity={.7} key={item.id} onPress={ () => navigation.navigate('Details',{
                         itemId: item.id,
+                        name: item.title,
+                        thumb: base_img+item.poster_path,
+                        data: item.release_date,
+                        description: item.overview
                     })}>
                         <View style={styles.card}>
                             <Image style={styles.thumb} resizeMode="cover" source={ {uri: base_img+item.poster_path } } />
