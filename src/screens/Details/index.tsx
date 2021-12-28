@@ -17,6 +17,8 @@ export default function Detail( { route } : Props ){
         <ScrollView style={styles.screen}>
             <View style={styles.container}>
                 <Image style={styles.thumb} resizeMode="contain" source={ {uri: thumb } } />
+                <Text style={styles.title}>{name}</Text>
+                <Text style={styles.desc}>{description}</Text>
             </View>
         </ScrollView>
     )

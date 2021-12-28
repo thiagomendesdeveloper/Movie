@@ -15,6 +15,16 @@ export const styles = StyleSheet.create({
         width: theme.dimension.width-100,
         height: 400,
         marginTop: getStatusBarHeight() + 35,
-
+    },
+    title: {
+        color: theme.colors.white,
+        marginTop: 20,
+        fontSize: 16
+    },
+    desc: {
+        color: theme.colors.secundaryWhite,
+        marginTop: 20,
+        width: '90%',
+        fontSize: 14
     }
 })
