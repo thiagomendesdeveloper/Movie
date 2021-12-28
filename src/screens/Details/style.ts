@@ -17,14 +17,33 @@ export const styles = StyleSheet.create({
         marginTop: getStatusBarHeight() + 35,
     },
     title: {
-        color: theme.colors.white,
+        color: theme.colors.roxo,
         marginTop: 20,
-        fontSize: 16
+        fontSize: 18,
+
     },
     desc: {
         color: theme.colors.secundaryWhite,
         marginTop: 20,
-        width: '90%',
+        width: '92%',
         fontSize: 14
+    },
+    flex : {
+        flexDirection: "row",
+        width: "100%",
+        marginTop: 20,
+        justifyContent: "space-around"
+    },
+    cardInfo: {
+        backgroundColor: "#2c2c2c",
+        marginTop: 5,
+        alignItems: "center",
+        justifyContent: "center",
+        width: "45%",
+        padding: 15
+    },
+    titleicon : {
+        color: theme.colors.secundaryWhite,
+        marginTop: 10
     }
 })

@@ -17,7 +17,8 @@ interface Movies {
     title?: string,
     poster_path?: string,
     release_date?: string,
-    overview?: string
+    overview?: string,
+    popularity?: string
 }
 
 type ProfileScreenNavigationProp = StackNavigationProp<
@@ -61,7 +62,8 @@ export default function Home({navigation}: Props){
                         name: item.title,
                         thumb: base_img+item.poster_path,
                         data: item.release_date,
-                        description: item.overview
+                        description: item.overview,
+                        popularity: item.popularity
                     })}>
                         <View style={styles.card}>
                             <Image style={styles.thumb} resizeMode="cover" source={ {uri: base_img+item.poster_path } } />

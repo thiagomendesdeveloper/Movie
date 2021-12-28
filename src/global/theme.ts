@@ -5,6 +5,7 @@ export const theme = {
         primary: '#0d1117',
         white: '#fff',
         secundaryWhite: '#e1e1e1',
+        roxo: "#aa89e5"
     },
 
     dimension: {
